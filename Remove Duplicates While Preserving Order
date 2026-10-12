@@ -1,0 +1,26 @@
+
+#include <iostream>
+#include <string>
+#include <unordered_set>
+using namespace std;
+
+int main() {
+    string s;
+    cout << "Enter a string: ";
+    cin >> s;
+
+    unordered_set<char> seen;
+    string result = "";
+
+    for (char c : s) {
+        if (seen.find(c) == seen.end()) {
+            result += c;
+            seen.insert(c);
+        }
+    }
+
+    cout << "String after removing duplicates: "
+         << result;
+
+    return 0;
+}
